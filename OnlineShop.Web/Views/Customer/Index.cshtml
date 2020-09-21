@@ -1,0 +1,32 @@
+﻿
+@model OnlineShop.Web.ViewModels.CustomerViewModel
+
+
+<h1>Customers</h1>
+
+<form asp-controller="Customer" asp-action="Index">
+
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone1</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var customer in Model.CustomerList)
+        {
+            @Html.Partial("_Customer", customer)
+        }
+    </tbody>
+
+</table>
+
+
+
